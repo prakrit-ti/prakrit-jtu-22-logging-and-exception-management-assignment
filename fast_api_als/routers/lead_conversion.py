@@ -16,6 +16,8 @@ router = APIRouter()
 """
 write proper logging and exception handling
 """
+logging.basicConfig(format='%(levelname)s: %(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p', filename='fast_api_als/example.log', level=logging.DEBUG)
+logging.debug('Libraries successfully imported in file lead_conversion')
 
 def get_quicksight_data(lead_uuid, item):
     """
