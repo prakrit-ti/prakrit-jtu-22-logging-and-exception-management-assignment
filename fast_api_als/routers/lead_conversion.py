@@ -28,6 +28,7 @@ def get_quicksight_data(lead_uuid, item):
             Returns:
                 S3 data
     """
+    logging.info('data loading')
     data = {
         "lead_hash": lead_uuid,
         "epoch_timestamp": int(time.time()),
@@ -39,6 +40,7 @@ def get_quicksight_data(lead_uuid, item):
         "3pl": item.get('3pl', 'unknown'),
         "oem_responded": 1
     }
+    logging.info('data load success')
     return data, f"{item['make']}/1_{int(time.time())}_{lead_uuid}"
 
 
